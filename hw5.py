@@ -45,7 +45,7 @@ class LinkedList:
             yield current.data
             current = current.next
 
-    def reverse(self):
+    def reverse(self): # разбираем реверс
         if self.head:
             previous = None
             current = self.head
@@ -56,13 +56,13 @@ class LinkedList:
                 current = future
             self.head = previous
 
-    def deductName(self, values: Iterable):
+    def deductName(self, values: Iterable): #разбираемся с Big 0
         for value in values:
             current = LinkedListNode(value)
             # current -= 1
             print(current)
 
-    def divide(self, values):
+    def divide(self, values): #разбираемся с Big 0
         for value in values:
             current = LinkedListNode(value)
         while current > 1:
