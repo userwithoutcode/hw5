@@ -31,7 +31,6 @@ class LinkedList:
     def __init__(self, values: Iterable):
         previous = None
         self.head = None
-        self.value = None
         for value in values:
             current = LinkedListNode(value)
             if previous:
@@ -45,7 +44,7 @@ class LinkedList:
             yield current.data
             current = current.next
 
-    def reverse(self): # разбираем реверс
+    def reverse(self):  # разбираем реверс
         if self.head:
             previous = None
             current = self.head
@@ -55,20 +54,6 @@ class LinkedList:
                 previous = current
                 current = future
             self.head = previous
-
-    def deductName(self, values: Iterable): #разбираемся с Big 0
-        for value in values:
-            current = LinkedListNode(value)
-            # current -= 1
-            print(current)
-
-    def divide(self, values): #разбираемся с Big 0
-        for value in values:
-            current = LinkedListNode(value)
-        while current > 1:
-            current /= 2
-            print(current)
-        return current
 
 
 class LinkedListTestCase(unittest.TestCase):
@@ -100,5 +85,38 @@ class LinkedListTestCase(unittest.TestCase):
                     list(linked_list),
                 )
 
-# LinkedList.deductName('LinkedListNode', 'values')
-LinkedList.divide('LinkedListNode', 'values')
+
+def my_test_list():
+    l = LinkedList([1, 2, 3, 4])  # создаем объект l класса LinkedList из списка данных
+    print('Прямой лист', list(l))
+    l.reverse()  # переворачиваем список
+    print('Обратный лист', list(l))
+
+
+my_test_list()
+
+print('Big O')
+
+
+def deductName():
+    l = LinkedList([1, 2, 3, 4])
+    for x in l:
+        x -= 1
+    print(x)
+
+
+deductName()
+
+print('Logarithmic')
+
+
+def divide():  # разбираемся с Big 0
+    l = LinkedList([1, 2, 3, 4])
+    for x in l:
+        while x > 1:
+            x /= 2
+            print(x)
+
+divide()
+
+
